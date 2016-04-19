@@ -1,0 +1,53 @@
+sc_agent_of_finding_busy_pairs_by_current_date
+=> nrel_main_idtf:
+	[sc-агент поиска занятых пар] 
+	(* <- lang_ru;; *);
+	[sc-agent of finding] 
+	(* <- lang_en;; *);
+
+<- abstract_sc_agent;
+
+=> nrel_primary_initiation_condition: 
+	(sc_event_add_output_arc => question_initiated);
+
+=> nrel_initiation_condition_and_result: 
+	(..sc_agent_of_finding_busy_pairs_by_current_date_condition => ..sc_agent_of_finding_busy_pairs_by_current_date_result);
+
+<= nrel_sc_agent_key_sc_elements: 
+	{
+	question_initiated;
+	question;
+	question_finding_busy_pairs_by_current_date
+	};
+
+=> nrel_inclusion: 
+	.platform_independent_realization_of_sc_agent_of_finding_busy_pairs_by_current_date
+	(*
+	<- platform_independent_abstract_sc_agent;;
+	<= nrel_sc_agent_program: 
+		{
+		agent_of_finding_busy_pairs_by_current_date;
+		proc_of_finding_busy_pairs_by_current_date;
+		proc_of_finding_add_param	
+		};;
+	-> sc_agent_of_finding_busy_pairs_by_current_date_scp   
+		(* <- active_sc_agent;; *);;
+	*);;
+
+..sc_agent_of_finding_busy_pairs_by_current_date_condition
+= [*
+	question_finding_busy_pairs_by_current_date _-> .._question;;
+	question_initiated _-> .._question;;
+	question _-> .._question;;
+	.._question _-> .._parameter1;;
+	
+*];;
+
+..sc_agent_of_finding_busy_pairs_by_current_date_result
+= [*
+	question_finding_busy_pairs_by_current_date _-> .._question;;
+	question_finished _-> .._question;;
+	question _-> .._question;;
+	.._question _=> nrel_answer:: .._answer;;
+	.._question _-> .._parameter1;;
+*];;

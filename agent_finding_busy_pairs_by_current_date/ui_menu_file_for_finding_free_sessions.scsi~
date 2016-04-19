@@ -1,0 +1,27 @@
+ui_menu_file_for_finding_busy_pairs_by_current_date <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+
+ui_menu_file_for_finding_busy_pairs_by_current_date => nrel_main_idtf: 
+	[Запрос поиска занятых пар]
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_finding_busy_pairs_by_current_date => nrel_main_idtf: 
+	[Request of finding busy sessions]
+	(* <- lang_en;; *);;
+
+ui_menu_file_for_finding_busy_pairs_by_current_date => ui_nrel_command_template:
+	[*
+		question_finding_busy_pairs_by_current_date _-> ._question_finding_busy_pairs_by_current_date_instance
+			(*
+			_-> rrel_n1::ui_arg_1;;
+			*);;
+		._question_finding_busy_pairs_by_current_date_instance _<- question;;
+	*];;
+
+ui_menu_file_for_finding_busy_pairs_by_current_date => ui_nrel_command_lang_template: 
+	[Запрос поиска свободных пар: $ui_arg_1] 
+	(* <- lang_ru;; *);;
+
+ui_menu_file_for_finding_busy_pairs_by_current_date => ui_nrel_command_lang_template: 
+	[Request of finding free sessions: $ui_arg_1] 
+	(* <- lang_en;; *);;
+

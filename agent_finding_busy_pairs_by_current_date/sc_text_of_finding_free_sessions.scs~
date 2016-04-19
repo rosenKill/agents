@@ -1,0 +1,6 @@
+sc_text_of_agent_of_finding_busy_pairs_by_current_date
+-> rrel_key_sc_element:
+	agent_of_finding_busy_pairs_by_current_date;
+<- scp_program_sc_text;;
+
+sc_text_of_agent_of_finding_busy_pairs_by_current_date = [*^"file://agent_of_finding_busy_pairs_by_current_date.scsi"*];;
